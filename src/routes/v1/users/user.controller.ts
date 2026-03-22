@@ -4,7 +4,10 @@ import userService from '@/services/User';
 import type { CreateUserBody } from '@/schemas/user';
 import type { AppEnv } from '@/types/env';
 
-export const createUser = async (c: Context<AppEnv>, payload: CreateUserBody) => {
+export const createUser = async (
+  c: Context<AppEnv>,
+  payload: CreateUserBody
+) => {
   const { name } = payload;
 
   try {

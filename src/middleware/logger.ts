@@ -1,6 +1,6 @@
-import { createMiddleware } from "hono/factory";
-import { httpLogger } from "@/services/logger";
-import type { AppEnv } from "@/types/env";
+import { createMiddleware } from 'hono/factory';
+import { httpLogger } from '@/services/logger';
+import type { AppEnv } from '@/types/env';
 
 export const loggerMiddleware = createMiddleware<AppEnv>(async (c, next) => {
   const startedAt = Date.now();
@@ -12,7 +12,7 @@ export const loggerMiddleware = createMiddleware<AppEnv>(async (c, next) => {
   const logPayload = {
     status,
     durationMs,
-    userAgent: c.req.header("user-agent") ?? "unknown",
+    userAgent: c.req.header('user-agent') ?? 'unknown',
   };
 
   if (status >= 500) {

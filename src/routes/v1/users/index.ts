@@ -7,7 +7,7 @@ import type { AppEnv } from '@/types/env';
 
 const usersRouter = new Hono<AppEnv>();
 
-usersRouter.post('/', zValidator('json', CreateUserBodySchema), c => {
+usersRouter.post('/', zValidator('json', CreateUserBodySchema), (c) => {
   return createUser(c, c.req.valid('json'));
 });
 usersRouter.get('/', getUsers);

@@ -1,13 +1,13 @@
-import type { AppBindings } from "@/types/env";
+import type { AppBindings } from '@/types/env';
 
-const DEFAULT_APP_NAME = "hono-restful-api";
-const DEFAULT_HOST = "127.0.0.1";
+const DEFAULT_APP_NAME = 'hono-restful-api';
+const DEFAULT_HOST = '127.0.0.1';
 const DEFAULT_PORT = 3000;
-const DEFAULT_CORS_ORIGIN = "*";
-const DEFAULT_LOG_LEVEL = "debug";
+const DEFAULT_CORS_ORIGIN = '*';
+const DEFAULT_LOG_LEVEL = 'debug';
 
 const getProcessEnv = () => {
-  if (typeof process === "undefined") {
+  if (typeof process === 'undefined') {
     return undefined;
   }
 
