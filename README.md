@@ -37,6 +37,18 @@ npm run build
 npm run start
 ```
 
+Lint:
+
+```bash
+npm run lint
+```
+
+Format:
+
+```bash
+npm run format
+```
+
 ## Cloudflare Workers で起動/デプロイ
 
 ローカル開発:
