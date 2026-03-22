@@ -1,0 +1,7 @@
+name = "hono-restful-template"
+main = "src/worker.ts"
+compatibility_date = "2026-03-22"
+
+[vars]
+APP_NAME = "hono-restful-template"
+CORS_ORIGIN = "*"

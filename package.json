@@ -1,0 +1,37 @@
+{
+  "name": "hono-restful-template",
+  "description": "Honoを使ったNode.js / Cloudflare Workers両対応のREST APIテンプレート",
+  "version": "1.0.0",
+  "author": "kuwa",
+  "keywords": ["typescript", "hono", "template", "cloudflare-workers", "nodejs"],
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/node.ts",
+    "dev:worker": "wrangler dev",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && npm run build:node",
+    "build:node": "tsup src/node.ts --format esm --target node20 --out-dir dist --clean",
+    "check:worker": "wrangler deploy --dry-run",
+    "start": "node dist/node.js",
+    "deploy:worker": "wrangler deploy"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@hono/zod-validator": "^0.7.5",
+    "@hono/node-server": "^1.13.8",
+    "dotenv": "^16.6.1",
+    "hono": "^4.8.5",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.18.0"
+  }
+}
