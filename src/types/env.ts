@@ -3,6 +3,7 @@ export type AppBindings = {
   HOST?: string;
   PORT?: string;
   CORS_ORIGIN?: string;
+  LOG_LEVEL?: string;
 };
 
 export type AppEnv = {

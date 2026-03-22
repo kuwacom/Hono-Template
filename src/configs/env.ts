@@ -4,6 +4,7 @@ const DEFAULT_APP_NAME = "hono-restful-api";
 const DEFAULT_HOST = "127.0.0.1";
 const DEFAULT_PORT = 3000;
 const DEFAULT_CORS_ORIGIN = "*";
+const DEFAULT_LOG_LEVEL = "debug";
 
 const getProcessEnv = () => {
   if (typeof process === "undefined") {
@@ -27,5 +28,6 @@ export const getAppConfig = (bindings?: AppBindings) => {
     port: parsePort(bindings?.PORT ?? processEnv?.PORT),
     corsOrigin:
       bindings?.CORS_ORIGIN ?? processEnv?.CORS_ORIGIN ?? DEFAULT_CORS_ORIGIN,
+    logLevel: bindings?.LOG_LEVEL ?? processEnv?.LOG_LEVEL ?? DEFAULT_LOG_LEVEL,
   };
 };

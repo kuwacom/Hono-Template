@@ -2,9 +2,9 @@ import "dotenv/config";
 import { serve } from "@hono/node-server";
 import app from "@/app";
 import { getAppConfig } from "@/configs/env";
-import logger from "@/services/logger";
+import { serverLogger } from "@/services/logger";
 
-const { host, port } = getAppConfig();
+const { appName, host, port, logLevel } = getAppConfig();
 
 serve(
   {
@@ -13,6 +13,11 @@ serve(
     port,
   },
   (info) => {
-    logger.info(`Server is running on: http://${host}:${info.port}`);
+    serverLogger.info("Server started", {
+      appName,
+      url: `http://${host}:${info.port}`,
+      logLevel,
+      runtime: "node",
+    });
   },
 );
